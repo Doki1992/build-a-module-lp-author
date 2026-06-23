@@ -12,3 +12,8 @@ jobs:
       run: Install-Module -Name "ModuleBuilder" -Scope CurrentUser -Force -AcceptLicense
     - name: Compile Module Files
       run: Build-Module -Path Source
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: compiled-powershell-module  
+        path: .\Output\ModuleBuilder\0.0.0\ModuleBuilder.psd1
