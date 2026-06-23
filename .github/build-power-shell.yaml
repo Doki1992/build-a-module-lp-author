@@ -1,0 +1,10 @@
+on:
+  push:
+    brnaches:
+      - main
+jobs:
+  install-build-module:
+    runs-on: windows-11-arm
+    steps: 
+    - name: "Installing Build Module"
+      run: Install-Module -Name "ModuleBuilder" -Scope CurrentUser
