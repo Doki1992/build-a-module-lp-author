@@ -11,7 +11,11 @@ jobs:
     - name: "Installing Build Module"
       run: Install-Module -Name "ModuleBuilder" -Scope CurrentUser -Force -AcceptLicense
     - name: Compile Module Files
-      run: Build-Module -Path Source
+      run: Build-Module Source
+    - name: check path
+      run: |
+        $path = $PWD.Path
+        echo $path     
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
