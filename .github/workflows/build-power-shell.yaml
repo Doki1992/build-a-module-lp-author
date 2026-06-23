@@ -6,5 +6,9 @@ jobs:
   install-build-module:
     runs-on: windows-11-arm
     steps: 
+    - name: Checkout Source Code
+      uses: actions/checkout@v4  
     - name: "Installing Build Module"
       run: Install-Module -Name "ModuleBuilder" -Scope CurrentUser -Force -AcceptLicense
+    - name: Compile Module Files
+      run: Build-Module -Path Source
